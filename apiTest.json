@@ -1,0 +1,857 @@
+{
+	"info": {
+		"_postman_id": "a6046329-9c45-4c89-a5dc-46dff901a4dc",
+		"name": "webchat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25166339"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"nghuy150502@gmail.com\", \"verification_code\": \"770625\" ,\"password\": \"123123\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"bebin0605@gmail.com\",\"password\":\"pass123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/auth/verify",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"webchat6969@gmail.com\",\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjJjNDUxNWRjYzFhZWYyNDE1ZTU4YyJ9LCJleHAiOjE3MDExODMwNjB9.xvLIbkjs2WIGOZPfwZZlZM0CefbD9-AOxJEzTOhbf5w\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/verify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/send-image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNDY4MDB9.rtfgJfSfwjX0TSYt_0t2PuYLdkosnNHShHZGuBLfkic"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "room_id",
+							"value": "656c29d624f1af60932a6a68",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/huy8bit/Desktop/Screenshot 2023-11-02 at 22.37.18.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/send-message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNDY4MDB9.rtfgJfSfwjX0TSYt_0t2PuYLdkosnNHShHZGuBLfkic"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"room_id\": \"656c29d624f1af60932a6a68\",\"content\": \"Hello, nguyen gia huy!\", \"format\": \"text\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/send-audio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNDY4MDB9.rtfgJfSfwjX0TSYt_0t2PuYLdkosnNHShHZGuBLfkic"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "audio",
+							"type": "file",
+							"src": "/Users/huy8bit/Downloads/classic-arcade-video-game-2023-11-27-05-19-54-utc/Classic Arcade Video Game Music - Cut C 0-10.mp3"
+						},
+						{
+							"key": "room_id",
+							"value": "656c29d624f1af60932a6a68",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-audio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-audio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/send-video",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNDY4MDB9.rtfgJfSfwjX0TSYt_0t2PuYLdkosnNHShHZGuBLfkic"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "room_id",
+							"value": "656c29d624f1af60932a6a68",
+							"type": "text"
+						},
+						{
+							"key": "video",
+							"type": "file",
+							"src": "/Users/huy8bit/Desktop/SAVE DESKTOP/CentOS - VMware Workstation 2022-04-10 20-03-29.mp4"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/get-messages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDE2Mjk1ODl9.q8j9yXQfYDSoZK14scTNOWeRoHTSmZrN_C6GnTpCC3E"
+					},
+					{
+						"key": "room_id",
+						"value": "656c29d624f1af60932a6a68",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/get-messages/656c29d624f1af60932a6a68",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"get-messages",
+						"656c29d624f1af60932a6a68"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/request-verification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"nghuy150502@gmail.com\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/request-verification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"request-verification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/contacts/send-friend-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjQ1MDIzMDc4YzgxNDY2NGE5NTk3NSJ9LCJleHAiOjE3MDIyNjg0NDd9.vwijiZVle3Tx2aSqREhljjesKopn4vcij-uxDvK4OrA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"receiver_id\": \"656c210711731d74e81d2001\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/contacts/send-friend-request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contacts",
+						"send-friend-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/request-password-reset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZ3V5ZW5naWFodXkiLCJleHAiOjE2OTk5NzgxNDF9.UU1kcv9-SDf30ewxFmr4LPZQFxYsumjvj4EFBNe1uRo",
+						"disabled": true
+					},
+					{
+						"key": "name",
+						"value": "Nguyễn Gia Huy",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"nghuy150502@gmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/request-password-reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"request-password-reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/reset-password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"nghuy150502@gmail.com\", \"verification_code\": \"732790\", \"new_password\": \"pass123\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/reset-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/set-info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDE2MjEyMDN9.tXPOpUVqGAvFmwF-Uo5Ai74nGqbyTnAEC-BNp1joXlM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"nghuy150502@gmail.com\",\n    \"name\": \"Nguyen Gia Huy\",\n    \"phone\": \"0948385149\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/set-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"set-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/set-avatar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNjE2MzF9._plwBGp3jIc03gfkUlmtPxIaVn9CGgncyaupcMyHZNU"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/huy8bit/Desktop/images.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/set-avatar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"set-avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/create-room",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZ3V5ZW5naWFodXkiLCJleHAiOjE2OTk5NzMzMjJ9.y18gJVCSpDoJlrvNxzatvS31SCZYhWnrLPzQ8d4hS1Q"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/send-message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer your_token_here"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"room_id\": \"room_id_here\", \"message\": {\"content\": \"Hello, World!\", \"sender\": \"sender_id_here\", \"format\": \"text\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/send-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"send-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/chat/send-audio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDE2MjczNDl9.7kMmwzM4uG7KuNmU4BhVdns8Ou8m9OuJUmIcDIapsTo"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "room_id",
+							"value": "656c29d624f1af60932a6a68",
+							"type": "text"
+						},
+						{
+							"key": "audio",
+							"type": "file",
+							"src": "/Users/huy8bit/Downloads/classic-arcade-video-game-2023-11-27-05-19-54-utc/Classic Arcade Video Game Music - Cut C 0-10.mp3"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/chat/send-audio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send-audio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/get-info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNjE2MzF9._plwBGp3jIc03gfkUlmtPxIaVn9CGgncyaupcMyHZNU"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/get-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"get-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/auth/get-avatar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNjE2MzF9._plwBGp3jIc03gfkUlmtPxIaVn9CGgncyaupcMyHZNU"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/get-avatar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"get-avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/contacts/get-all-friends/656c210711731d74e81d2001",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNzUyMzZ9.EkEs6azKwkZG3D5tRVZ3yM_FZQKUcJ-jKEs9hdirSQ0"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/contacts/get-all-friends/656c210711731d74e81d2001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contacts",
+						"get-all-friends",
+						"656c210711731d74e81d2001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/contacts/accept-friend-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NmMyMTA3MTE3MzFkNzRlODFkMjAwMSJ9LCJleHAiOjE3MDIyNjkxODB9.Yt8u-8fq8glKFCmQadHJrM0PBOGZQA0ttnoKwdyvZak"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender_id\": \"65645023078c814664a95975\", \"receiver_id\": \"656c210711731d74e81d2001\"} "
+				},
+				"url": {
+					"raw": "http://localhost:8000/contacts/accept-friend-request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contacts",
+						"accept-friend-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/contacts/reject-friend",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjQ1MDIzMDc4YzgxNDY2NGE5NTk3NSJ9LCJleHAiOjE3MDIyNjU3OTl9.jxDpK2x97TrUfb9rZm_0BpyKlA8_L22QyDlfpNA9mOA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender_id\": \"656c210711731d74e81d2001\", \"receiver_id\": \"65645023078c814664a95975\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/contacts/reject-friend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contacts",
+						"reject-friend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/wallets/create-wallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjQ1MDIzMDc4YzgxNDY2NGE5NTk3NSJ9LCJleHAiOjE3MDIzMTI0MTJ9.q7paCJD1TAiapzcJyWgbNPofNeEqPH8YE5YRg2T9s_M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"user_id\": \"65645023078c814664a95975\", \"balance\": 1000}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/wallets/create-wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wallets",
+						"create-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/wallets/transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjQ1MDIzMDc4YzgxNDY2NGE5NTk3NSJ9LCJleHAiOjE3MDIzMTI0MTJ9.q7paCJD1TAiapzcJyWgbNPofNeEqPH8YE5YRg2T9s_M"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"sender_wallet_id\": \"65645023078c814664a95975\",\n        \"receiver_wallet_id\": \"656c210711731d74e81d2001\",\n        \"amount\": 12\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/wallets/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wallets",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/wallets/get-wallet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcl9pZCI6IjY1NjQ1MDIzMDc4YzgxNDY2NGE5NTk3NSJ9LCJleHAiOjE3MDIzMTI0MTJ9.q7paCJD1TAiapzcJyWgbNPofNeEqPH8YE5YRg2T9s_M"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/wallets/get-wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wallets",
+						"get-wallet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
